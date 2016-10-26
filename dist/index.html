@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>react</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <script>
+        (function (win, doc) {
+            win.isMobile = ! ! /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|MicroMessenger/i.test(navigator.userAgent);
+            win.isIOS = ! ! /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            win.isIOS7 = ! ! /(iPhone|iPad|iPod) OS 7/i.test(navigator.userAgent);
+            win.isAndroid = ! ! /Android/i.test(navigator.userAgent);
+            win.isWechat = ! ! /MicroMessenger/i.test(navigator.userAgent);
+            win.isIE = ! ! /Trident|Edge/i.test(navigator.userAgent);
+            var baseWidth = 640;
+            var documentHTML = doc.documentElement;
+            function setRootFont () {
+                var docWidth = documentHTML.getBoundingClientRect().width;
+                var scale = docWidth / baseWidth;
+                if (docWidth > 640) {
+                    scale = 0.5;
+                }
+                documentHTML.style.fontSize = scale * 100 + 'px';
+            }
+            setRootFont();
+            win.addEventListener('resize', setRootFont, false);
+        })(window, document);
+    </script>
+</head>
+<body>
+    <div id="root"></div>
+<script type="text/javascript" src="/dist/vendor.bundle.js?8133b614f4caaea978d3&8133b614f4caaea978d3"></script><script type="text/javascript" src="/dist/main.bundle.js?8133b614f4caaea978d3&8133b614f4caaea978d3"></script></body>
+</html>
